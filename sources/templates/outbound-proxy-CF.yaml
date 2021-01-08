@@ -7,7 +7,7 @@ Parameters:
 
   WhitelistedDomains:
     Type: String
-    Default: .amazonaws.com, .debian.org
+    Default: .amazonaws.com, .cloudera.com, .centos.org
     Description: Whitelisted domains comma separated 
   
   CustomDNS:
@@ -487,7 +487,7 @@ Resources:
                  # (https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html#instance-metadata-limiting-access)
                  acl imds dst 169.254.169.254
 
-
+                 acl SSL_ports port 6000-6049 # Cloudera -CCM ports
                  acl SSL_ports port 443
                  acl Safe_ports port 80		# http
                  acl Safe_ports port 21		# ftp
