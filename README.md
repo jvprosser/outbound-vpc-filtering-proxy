@@ -2,8 +2,8 @@
 
 Outbound VPC proxy with domain whitelisting and content filtering customized for Cloudera Data Platform running in AWS.
 
-- Customizes Squid config
-- Updates CloudFormation Template to create AWS S3 endpoint
+- Customizes Squid config to allow outbound CCM connection
+- Updates CloudFormation Template to create AWS S3 endpoint for FreeIPA backup
 
 For more information see AWS Security Blog [How to set up an outbound VPC proxy with domain whitelisting and content filtering](https://aws.amazon.com/blogs/security/how-to-set-up-an-outbound-vpc-proxy-with-domain-whitelisting-and-content-filtering)
 
