@@ -209,6 +209,7 @@ Resources:
               - 'arn:aws:s3:::${CDPBucket}/*'
       RouteTableIds:
         - !Ref 'PrivateRouteTable1'
+        - !Ref 'PublicRouteTable'
       ServiceName: !Sub 'com.amazonaws.${AWS::Region}.s3'
       VpcId: !Ref 'VPC'
 # JVP END
