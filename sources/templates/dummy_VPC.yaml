@@ -4,6 +4,11 @@ AWSTemplateFormatVersion: '2010-09-09'
 Description: Create VPC for proxy demo
 Parameters:
 
+  CDPBucket:
+    Type: String
+    Description: Bucket for CDP Environment
+    AllowedPattern: (?!^(\d{1,3}\.){3}\d{1,3}$)(^[a-z0-9]([a-z0-9-]*(\.[a-z0-9])?)*$)
+    Default: changeme
   VPCCidrBlock:
     Type: String
     Description: CIDR block for VPC to deploy. (X.X.X.X/X)
@@ -189,6 +194,24 @@ Resources:
       RouteTableId: !Ref 'PrivateRouteTable1'
       SubnetId: !Ref 'PrivateSubnet3'
 
+# JVP ADD
+  S3Endpoint:
+    Type: 'AWS::EC2::VPCEndpoint'
+    Properties:
+      PolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal: '*'
+            Action:
+              - 's3:GetObject'
+            Resource:
+              - 'arn:aws:s3:::${CDPBucket}/*'
+      RouteTableIds:
+        - !Ref 'PrivateRouteTable1'
+      ServiceName: !Sub 'com.amazonaws.${AWS::Region}.s3'
+      VpcId: !Ref 'VPC'
+# JVP END
 
 Outputs:
   VPCID:
