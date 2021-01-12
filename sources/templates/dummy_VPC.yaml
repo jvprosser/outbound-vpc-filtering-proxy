@@ -13,37 +13,37 @@ Parameters:
     Type: String
     Description: CIDR block for VPC to deploy. (X.X.X.X/X)
     AllowedPattern: ^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(/([0-9]|[1-2][0-9]|3[0-2]))$
-    Default: 10.0.0.0/16
+    Default: 10.0.0.0/8
   PublicSubnetCIDR1:
     Type: String
     Description: First public subnet CIDR 
     AllowedPattern: ^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(/([0-9]|[1-2][0-9]|3[0-2]))$
-    Default: 10.0.1.0/24
+    Default: 10.1.0.0/16
   PublicSubnetCIDR2:
     Type: String
     Description: Second public subnet CIDR 
     AllowedPattern: ^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(/([0-9]|[1-2][0-9]|3[0-2]))$
-    Default: 10.0.2.0/24
+    Default: 10.2.0.0/16
   PublicSubnetCIDR3:
     Type: String
     Description: Third public subnet CIDR 
     AllowedPattern: ^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(/([0-9]|[1-2][0-9]|3[0-2]))$
-    Default: 10.0.3.0/24
+    Default: 10.3.0.0/16
   PrivateSubnetCIDR1:
     Type: String
     Description: First private subnet CIDR 
     AllowedPattern: ^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(/([0-9]|[1-2][0-9]|3[0-2]))$
-    Default: 10.0.4.0/24
+    Default: 10.4.0.0/
   PrivateSubnetCIDR2:
     Type: String
     Description: Second private subnet CIDR 
     AllowedPattern: ^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(/([0-9]|[1-2][0-9]|3[0-2]))$
-    Default: 10.0.5.0/24
+    Default: 10.5.0.0/16
   PrivateSubnetCIDR3:
     Type: String
     Description: Thirs private subnet CIDR 
     AllowedPattern: ^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(/([0-9]|[1-2][0-9]|3[0-2]))$
-    Default: 10.0.6.0/24
+    Default: 10.6.0.0/16
 Resources:
   VPC:
     Type: AWS::EC2::VPC
