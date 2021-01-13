@@ -24,7 +24,6 @@ Parameters:
     Type: String
     Default: 3128
     Description: Port Proxy 
-
   
   VpcId: 
     Description: VPC ID Where the Proxy will be installed
@@ -197,7 +196,7 @@ Resources:
   WhitelistedSitesSecret:
     Type: 'AWS::SecretsManager::Secret'
     Properties:
-      Name: Proxy-Domains-Whitelisting
+      Name: Squid-Proxy-Domains-Whitelisting
       Description: This secret contains the proxy whitelisted domains 
       SecretString: !Ref WhitelistedDomains
 
@@ -226,13 +225,13 @@ Resources:
     Properties:
       Scheme: internal
       Type: network
-      Name: OutboundProxyLoadBalancer
+      Name: SquidOutboundProxyLoadBalancer
       Subnets: !Ref PrivateSubnetIDs
   
   NetworkLoadBalancerTargetGroup:
     Type: AWS::ElasticLoadBalancingV2::TargetGroup
     Properties:
-      Name: OutboundProxyTargetGroup
+      Name: SquidOutboundProxyTargetGroup
       Port: !Ref ProxyPort
       Protocol: TCP
       VpcId: !Ref VpcId
@@ -661,52 +660,52 @@ Outputs:
     Description: The name of the CloudWatch log group for outbound proxy
     Value: !Ref OutboundProxyLogGroup
     Export:
-      Name: Proxy-CloudWatchLogGroupName
+      Name: Squid-Proxy-CloudWatchLogGroupName
 
   OutboundProxyDomain:
     Description: Proxy DNS name to be used in the clients 
     Value: !GetAtt LoadBalancer.DNSName
     Export: 
-        Name: Proxy-Domain
+        Name: Squid-Proxy-Domain
 
   OutboundProxyPort:
     Description: Port of the Proxy 
     Value: !Ref ProxyPort
     Export:
-      Name: Proxy-Port
+      Name: Squid-Proxy-Port
   
   EgressIP1:
     Description: Outbound Proxy source IP (first)
     Value: !Ref FixedEIPa
     Export: 
-        Name: Proxy-Egress-IP-1
+        Name: Squid-Proxy-Egress-IP-1
   EgressIP2:
     Description: Outbound Proxy source IP (second)
     Value: !Ref FixedEIPb
     Export: 
-        Name: Proxy-Egress-IP-2
+        Name: Squid-Proxy-Egress-IP-2
   EgressIP3:
     Description: Outbound Proxy source IP (third) 
     Value: !Ref FixedEIPc
     Export: 
-        Name: Proxy-Egress-IP-3
+        Name: Squid-Proxy-Egress-IP-3
   EgressIP4:
     Description: Outbound Proxy source IP (fourth)
     Value: !Ref FixedEIPd
     Export: 
-        Name: Proxy-Egress-IP-4
+        Name: Squid-Proxy-Egress-IP-4
 
   SecurityGroupProxy:
     Description: Proxy security group 
     Value: SecurityGroup_Proxy
     Export: 
-        Name: Proxy-SecurityGroup
+        Name: Squid-Proxy-SecurityGroup
 
   LinuxProxySettings:
     Description: Linux proxy settings. Copy and paste to your shell to set the proxy
     Value: !Sub "export http_proxy=http://${LoadBalancer.DNSName}:${ProxyPort} && export https_proxy=$http_proxy"
     Export: 
-      Name: LinuxProxySettings
+      Name: Squid-LinuxProxySettings
 
 
 
