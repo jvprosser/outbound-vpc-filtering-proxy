@@ -3,18 +3,17 @@
 Outbound VPC proxy with domain whitelisting and content filtering customized for Cloudera Data Platform running in AWS.
 
 - Customizes Squid config to allow outbound CCM connection
-- CloudFormation Template creates AWS VPC endpoints for
-
--- AWS STS
--- AWS S3
--- AWS DynamoDB
--- AWS ECR
--- AWS EC2
--- AWS Cloudformation
--- AWS Autoscaling
--- AWS EFS
--- AWS DynamoDB
--- AWS ELB
+- CloudFormation Template creates AWS VPC endpoints for:
+  - AWS STS
+  - AWS S3
+  - AWS DynamoDB
+  - AWS ECR
+  - AWS EC2
+  - AWS Cloudformation
+  - AWS Autoscaling
+  - AWS EFS
+  - AWS DynamoDB
+  - AWS ELB
 
 
 
