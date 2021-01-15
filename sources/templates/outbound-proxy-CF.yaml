@@ -40,7 +40,7 @@ Parameters:
   InstanceType:
     Description: WebServer EC2 instance type
     Type: String
-    Default: t3.medium
+    Default: t3.small
     AllowedValues:
     - t3.nano
     - t3.micro
@@ -65,7 +65,7 @@ Parameters:
   NetworkAllowedCIDR:
     Description: CIDR allowed in Proxy Security Group. The allowed block size is between a /32 netmask and /8 netmask
     Type: String
-    Default: 172.31.0.0/16
+    Default: 10.0.0.0/16
     AllowedPattern: ^[.0-9]*\/([89]|[12][0-9]|3[0-2])$
 
   LatestAmiId:
@@ -540,6 +540,8 @@ Resources:
                  acl step1 at_step SslBump1
                  acl step2 at_step SslBump2
                  acl step3 at_step SslBump3
+                 ssl_bump splice step1 all
+                 #ssl_bump peek step1 all
                  ssl_bump peek step1 all
                  ssl_bump peek step2 allowed_https_sites
                  ssl_bump splice step3 allowed_https_sites
