@@ -225,11 +225,11 @@ Resources:
       Type: "AWS::EC2::VPCEndpoint"
       Properties:
         VpcEndpointType: Interface
-	PrivateDnsEnabled: 'true'
-	SubnetIds:
-	  - !Ref 'PrivateSubnet1'
-	  - !Ref 'PrivateSubnet2'
-	  - !Ref 'PrivateSubnet3'
+        PrivateDnsEnabled: 'true'
+        SubnetIds:
+          - !Ref 'PrivateSubnet1'
+          - !Ref 'PrivateSubnet2'
+          - !Ref 'PrivateSubnet3'
         ServiceName:
           !Sub "com.amazonaws.${AWS::Region}.sts"
         VpcId: !Ref VPC1
@@ -238,11 +238,11 @@ Resources:
       Type: "AWS::EC2::VPCEndpoint"
       Properties:
         VpcEndpointType: Interface
-	PrivateDnsEnabled: 'true'
-	SubnetIds:
-	  - !Ref 'PrivateSubnet1'
-	  - !Ref 'PrivateSubnet2'
-	  - !Ref 'PrivateSubnet3'
+        PrivateDnsEnabled: 'true'
+        SubnetIds:
+          - !Ref 'PrivateSubnet1'
+          - !Ref 'PrivateSubnet2'
+          - !Ref 'PrivateSubnet3'
         PolicyDocument:
           Version: 2012-10-17
           Statement:
@@ -260,11 +260,11 @@ Resources:
       Type: "AWS::EC2::VPCEndpoint"
       Properties:
         VpcEndpointType: Interface
-	PrivateDnsEnabled: 'true'	
-	SubnetIds:
-	  - !Ref 'PrivateSubnet1'
-	  - !Ref 'PrivateSubnet2'
-	  - !Ref 'PrivateSubnet3'
+        PrivateDnsEnabled: 'true'        
+        SubnetIds:
+          - !Ref 'PrivateSubnet1'
+          - !Ref 'PrivateSubnet2'
+          - !Ref 'PrivateSubnet3'
         PolicyDocument:
           Version: 2012-10-17
           Statement:
@@ -282,11 +282,11 @@ Resources:
       Type: "AWS::EC2::VPCEndpoint"
       Properties:
         VpcEndpointType: Interface
-	PrivateDnsEnabled: 'true'	
-	SubnetIds:
-	  - !Ref 'PrivateSubnet1'
-	  - !Ref 'PrivateSubnet2'
-	  - !Ref 'PrivateSubnet3'
+        PrivateDnsEnabled: 'true'        
+        SubnetIds:
+          - !Ref 'PrivateSubnet1'
+          - !Ref 'PrivateSubnet2'
+          - !Ref 'PrivateSubnet3'
         PolicyDocument:
           Version: 2012-10-17
           Statement:
@@ -304,11 +304,11 @@ Resources:
       Type: "AWS::EC2::VPCEndpoint"
       Properties:
         VpcEndpointType: Interface
-	PrivateDnsEnabled: 'true'	
-	SubnetIds:
-	  - !Ref 'PrivateSubnet1'
-	  - !Ref 'PrivateSubnet2'
-	  - !Ref 'PrivateSubnet3'
+        PrivateDnsEnabled: 'true'        
+        SubnetIds:
+          - !Ref 'PrivateSubnet1'
+          - !Ref 'PrivateSubnet2'
+          - !Ref 'PrivateSubnet3'
         ServiceName:
           !Sub "com.amazonaws.${AWS::Region}.cloudformation"
         VpcId: !Ref VPC1
@@ -316,12 +316,12 @@ Resources:
   AutoscalingEndpoint:
       Type: "AWS::EC2::VPCEndpoint"
       Properties:
-	SubnetIds:
-	  - !Ref 'PrivateSubnet1'
-	  - !Ref 'PrivateSubnet2'
-	  - !Ref 'PrivateSubnet3'
+        SubnetIds:
+          - !Ref 'PrivateSubnet1'
+          - !Ref 'PrivateSubnet2'
+          - !Ref 'PrivateSubnet3'
         VpcEndpointType: Interface
-	PrivateDnsEnabled: 'true'	
+        PrivateDnsEnabled: 'true'        
         PolicyDocument:
           Version: 2012-10-17
           Statement:
@@ -339,11 +339,11 @@ Resources:
       Type: "AWS::EC2::VPCEndpoint"
       Properties:
         VpcEndpointType: Interface
-	PrivateDnsEnabled: 'true'	
-	SubnetIds:
-	  - !Ref 'PrivateSubnet1'
-	  - !Ref 'PrivateSubnet2'
-	  - !Ref 'PrivateSubnet3'
+        PrivateDnsEnabled: 'true'        
+        SubnetIds:
+          - !Ref 'PrivateSubnet1'
+          - !Ref 'PrivateSubnet2'
+          - !Ref 'PrivateSubnet3'
         PolicyDocument:
           Version: 2012-10-17
           Statement:
@@ -361,11 +361,11 @@ Resources:
       Type: "AWS::EC2::VPCEndpoint"
       Properties:
         VpcEndpointType: Interface
-	PrivateDnsEnabled: 'true'	
-	SubnetIds:
-	  - !Ref 'PrivateSubnet1'
-	  - !Ref 'PrivateSubnet2'
-	  - !Ref 'PrivateSubnet3'
+        PrivateDnsEnabled: 'true'        
+        SubnetIds:
+          - !Ref 'PrivateSubnet1'
+          - !Ref 'PrivateSubnet2'
+          - !Ref 'PrivateSubnet3'
         PolicyDocument:
           Version: 2012-10-17
           Statement:
